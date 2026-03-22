@@ -1,0 +1,119 @@
+/* 全局CSS变量 */
+:root {
+  --primary-color: #165DFF;
+  --secondary-color: #0F172A;
+  --accent-color: #36CFFB;
+  --success-color: #00B96B;
+  --warning-color: #FF7D00;
+  --error-color: #F53F3F;
+  --light-bg: #F8FAFC;
+  --white: #FFFFFF;
+  --text-primary: #1E293B;
+  --text-secondary: #64748B;
+  --text-light: #94A3B8;
+  --border-color: #E2E8F0;
+  --border-radius: 12px;
+  --border-radius-sm: 8px;
+  --shadow-base: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 8px 24px rgba(22, 93, 255, 0.15);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1);
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 64px;
+}
+
+/* 全局重置和基础样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--light-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 通用工具类 */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mb-0 { margin-bottom: 0; }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+
+.mt-0 { margin-top: 0; }
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+
+/* 动画类 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* 响应式断点 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--spacing-xs);
+  }
+}
